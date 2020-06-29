@@ -2,13 +2,17 @@ import { PassportStrategy } from '@nestjs/passport';
 import { Injectable } from '@nestjs/common';
 import { Strategy } from 'passport-snapchat';
 
+//Get Env Vars
+import { config } from 'dotenv';
+config();
+
 @Injectable()
 export class SnapStrategy extends PassportStrategy(Strategy, 'snapchat') {
   constructor() {
     super({
       clientID: process.env.SNAP_CLIENT_ID,
       clientSecret: process.env.SNAP_KEY,
-      callbackURL: process.env.BASE_API_URL + 'auth/snapchat/callback',
+      callbackURL: process.env.BASE_API_URL + 'callback',
       profileFields: ['id', 'displayName', 'bitmoji'],
       scope: ['user.display_name', 'user.bitmoji.avatar'],
     });
