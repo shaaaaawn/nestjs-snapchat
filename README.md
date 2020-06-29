@@ -11,6 +11,14 @@
 
 A [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository for creating applications utilizing the [SnapChat Snap Kit SDK](https://kit.snapchat.com/) with [Passport-Snapchat](https://github.com/Snapchat/passport-snapchat).
 
+## Snap Kit App Configuration
+
+- Login to [Snap Kit Developer Portal](https://kit.snapchat.com/) and create a new application.
+- Enable Login Kit. Add 'http://localhost:3000/callback' to the redirect URLs.
+- Enable 'Web' OAuth2 Client and generate API Keys/Secret.
+- Copy the 'CLIENT ID FOR CONFIDENTIAL OAUTH2 FLOW' into .env file as SNAP_CLIENT_ID.
+- Copy the 'CLIENT SECRET FOR CONFIDENTIAL OAUTH2 FLOW' into .env file as SNAP_KEY.
+
 ## Installation
 
 ```bash
@@ -42,17 +50,3 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
-
-<!-- ## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-  Nest is [MIT licensed](LICENSE). -->
